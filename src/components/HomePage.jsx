@@ -25,7 +25,7 @@ const Dashboard = ({ name, address, image, price,teamId ,tokenUri}) => {
   const mintNFT = async()=>{
     //event.preventDefault();
     console.log(price)
-    if(localStorage.getItem("CurrentAccount")!=localStorage.getItem("CurrentCreator")){
+    if(localStorage.getItem("CurrentAccount").toLowerCase()!=localStorage.getItem("CurrentCreator").toLowerCase()){
     createNewFlow(price,address)
     }
     console.log(teamId)
