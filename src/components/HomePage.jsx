@@ -27,7 +27,7 @@ const Dashboard = ({ name, address, image, price,teamId ,tokenUri}) => {
     console.log(price)
     createNewFlow(price,address)
     console.log(teamId)
-    const nft = await Accesstoken.CreateLicense(localStorage.getItem('CurrentAccount'),localStorage.getItem('tokenURI'),Number(teamId));
+    const nft = await Accesstoken.CreateLicense(localStorage.getItem('CurrentAccount'),tokenUri,Number(teamId));
     console.log("Minting....")
     let tx = await nft.wait()
     console.log('Mined!', tx)
