@@ -67,7 +67,7 @@ const Dashboard = ({ name, address, image, price,teamId ,tokenUri}) => {
           </Image>
           <div class="card-body">
             {name}
-            {count ? 
+            {count || localStorage.getItem('CurrentAccount').toLowerCase()===localStorage.getItem('CurrentCreator').toLowerCase() ? 
             <a class="d-grid btn btn-primary mx-auto">
             <Link
               to={address}

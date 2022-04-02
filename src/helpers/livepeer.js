@@ -39,7 +39,7 @@ async function fetchData(APIkey, id) {
       {
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${APIkey}`,
+          "authorization": `Bearer ${APIkey}`,
         },
       }
     )
