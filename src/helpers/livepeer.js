@@ -34,6 +34,7 @@ async function fetchData (APIkey, id){
            },
            {
            headers: {
+            'Access-Control-Allow-Origin': '*',
              "content-type": "application/json",
              authorization: `Bearer ${APIkey}`
            }
