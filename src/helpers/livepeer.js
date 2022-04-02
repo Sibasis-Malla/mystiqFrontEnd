@@ -6,7 +6,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 async function fetchData(APIkey, id) {
   await axios
     .post(
-      "https://livepeer.com/api/stream",
+      "https://cors-anywhere.herokuapp.com/https://livepeer.com/api/stream",
       {
         name: "test_stream",
         profiles: [
