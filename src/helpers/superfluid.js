@@ -115,6 +115,7 @@ try {
 }
 
 const distributeFunds = async(id_,amount)=>{
+  await getInfo() 
   try {
     const distributeOperation = sf.idaV1.distribute({
       indexId: id_,
