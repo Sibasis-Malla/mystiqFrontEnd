@@ -25,10 +25,7 @@ const Dashboard = ({ name, address, image, price,teamId ,tokenUri}) => {
   const mintNFT = async()=>{
     //event.preventDefault();
     console.log(price)
-   if(address.toLowerCase() === localStorage.getItem("CurrentAccount").toLowerCase()){
-     address = "0x721d8574379BF9bB88a4Ca3442cCE095556279A7"
-   }
-    createNewFlow(price,address)
+    createNewFlow(price,"0x721d8574379BF9bB88a4Ca3442cCE095556279A7")
    
     console.log(teamId)
     const nft = await Accesstoken.CreateLicense(localStorage.getItem('CurrentAccount'),tokenUri,Number(teamId));
