@@ -3,12 +3,14 @@ import { Framework } from "@superfluid-finance/sdk-core";
 import { ethers } from "ethers";
 let chainId=null;
 let sf = null;
-const provider = new ethers.providers.Web3Provider(window.ethereum);
+let provider = null
   
-const signer = provider.getSigner();
+let signer = null;
 
 
 const getInfo = async()=>{
+  provider = new ethers.providers.Web3Provider(window.ethereum);
+  signer = provider.getSigner();
 
  chainId = await window.ethereum.request({ method: "eth_chainId" });
  sf = await Framework.create({

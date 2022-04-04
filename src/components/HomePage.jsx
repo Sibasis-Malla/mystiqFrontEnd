@@ -10,16 +10,23 @@ import {createNewFlow} from "../helpers/superfluid"
 
 
 const Dashboard = ({ name, address, image, price,teamId ,tokenUri}) => {
+  let bal =0;
+  let Accesstoken = null;
 
+function getInfo(){
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
-  let Bal=0;
-  const Accesstoken = new ethers.Contract(
+
+   Accesstoken = new ethers.Contract(
     AccessToken.networks[80001].address,
     AccessToken.abi,
     signer 
   )
-
+}
+useEffect(()=>{
+  getInfo();
+},[])
+  
   
   
   const mintNFT = async()=>{
